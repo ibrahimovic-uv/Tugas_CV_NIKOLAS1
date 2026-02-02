@@ -1,149 +1,125 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CV Profesional - NIKOLAS RAHMADANI IBRAHIM</title>
-
     <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
-
 <body>
-
     <div class="container">
-
         <header class="fade-in">
-
             <div class="profile-img">
-
-                <img src="foto_NIKOLAS.png" alt="Nikolas">
-
+                <img src="foto_NIKOLAS.png" alt="NIKOLAS RAHMADANI IBRAHIM">
             </div>
-
             <div class="header-text">
-
                 <h1>NIKOLAS RAHMADANI IBRAHIM</h1>
-
-                <p class="job-title">Resilience & Leadership Specialist</p>
-
+                <p class="job-title">Lulusan SMA | Resilience & Leadership</p>
                 <div class="contact-info">
-
+                    <p><i class="fas fa-calendar-alt"></i> 13 Oktober 2007</p>
                     <p><i class="fas fa-phone"></i> 08123456789</p>
-
-                    <p><i class="fas fa-location-dot"></i> Bandung Selatan, Jelekong</p>
-
+                    <p><i class="fab fa-instagram"></i> @nikolasrahmadaniibrahim</p>
+                    <p><i class="fas fa-location-dot"></i> Per. Mentari Permai Residence, Jelekong, Bandung Selatan</p>
                 </div>
-
             </div>
-
         </header>
 
-
-
         <main>
-
             <section class="main-content">
-
                 <div class="section interactive-card">
-
-                    <h3><i class="fas fa-user"></i> Tentang Saya</h3>
-
-                    <p>Lahir pada 13 Oktober 2007. Individu dengan ketahanan mental tinggi, mampu beradaptasi cepat, dan selalu menghadapi tantangan dengan kepala tegap.</p>
-
+                    <h3><i class="fas fa-user-tie"></i> Tentang Saya</h3>
+                    <p>Saya adalah individu yang memiliki ketahanan mental tinggi dan kemampuan adaptasi yang cepat terhadap situasi baru. Lahir pada <strong>13 Oktober 2007</strong>, saya memiliki prinsip untuk selalu menghadapi tantangan dengan <strong>kepala tegap</strong>. Saya mampu bekerja sama dalam tim dan tetap tenang bahkan dalam kondisi yang sangat tidak menguntungkan.</p>
                 </div>
 
-
-
                 <div class="section interactive-card">
-
-                    <h3><i class="fas fa-users"></i> Organisasi</h3>
-
-                    <p>Anggota - CLUB Basket (s/d Sept 2025). Melatih kedisiplinan dan kerja sama tim secara profesional.</p>
-
+                    <h3><i class="fas fa-users"></i> Pengalaman Organisasi</h3>
+                    <div class="item">
+                        <h4>Anggota - CLUB Basket</h4>
+                        <span class="date">Masa Bakti s/d September 2025</span>
+                        <ul class="list-detail">
+                            <li>Melatih kedisiplinan, kerja sama tim, dan ketahanan fisik.</li>
+                            <li>Beradaptasi dengan strategi tim untuk hasil maksimal.</li>
+                        </ul>
+                    </div>
                 </div>
 
+                <div class="section interactive-card">
+                    <h3><i class="fas fa-heart"></i> Hobi</h3>
+                    <p><strong>Olahraga:</strong> Menjaga kebugaran fisik untuk menunjang produktivitas dan kestabilan mental.</p>
+                </div>
             </section>
 
-
-
             <aside class="sidebar">
-
-                <div class="section interactive-card" id="skill-section" onclick="showSkills()">
-
-                    <h3><i class="fas fa-bolt"></i> Keahlian (Klik)</h3>
-
-                    <div class="skill-item">
-
-                        <span>Ketahanan Mental</span>
-
-                        <div class="progress-bar"><div class="progress" style="width: 0%" data-done="95%"></div></div>
-
+                <div class="section interactive-card" id="skill-box" onclick="toggleSkills()">
+                    <h3><i class="fas fa-chart-line"></i> Keahlian (Klik)</h3>
+                    <div id="skills-container" style="display: none; opacity: 0; transition: 0.5s;">
+                        <div class="skill-item">
+                            <span>Ketahanan Mental</span>
+                            <div class="progress-bar"><div class="progress" data-done="98%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Kerja Sama Tim</span>
+                            <div class="progress-bar"><div class="progress" data-done="92%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Analisis Situasi</span>
+                            <div class="progress-bar"><div class="progress" data-done="95%"></div></div>
+                        </div>
                     </div>
-
-                    <div class="skill-item">
-
-                        <span>Kerja Sama Tim</span>
-
-                        <div class="progress-bar"><div class="progress" style="width: 0%" data-done="90%"></div></div>
-
-                    </div>
-
-                    <div class="skill-item">
-
-                        <span>Manajemen Stres</span>
-
-                        <div class="progress-bar"><div class="progress" style="width: 0%" data-done="98%"></div></div>
-
-                    </div>
-
+                    <p id="click-hint" style="font-size: 10px; color: #888; margin-top: 5px;">*Klik untuk lihat grafik, Klik lagi untuk tutup</p>
                 </div>
-
-
 
                 <div class="section interactive-card">
-
-                    <h3><i class="fas fa-language"></i> Bahasa</h3>
-
-                    <p>Indonesia, Sunda, Inggris, Jepang, Italia.</p>
-
+                    <h3><i class="fas fa-globe"></i> Bahasa</h3>
+                    <ul class="lang-list">
+                        <li>Indonesia & Sunda (Native), Inggris, Jepang, Italia</li>
+                    </ul>
                 </div>
 
+                <div class="section interactive-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Pendidikan</h3>
+                    <div class="education-list">
+                        <div class="edu-item">
+                            <strong>SMA / Sederajat</strong>
+                            <p>Lulusan Terbaru</p>
+                        </div>
+                        <div class="edu-item">
+                            <strong>SMP / Sederajat</strong>
+                        </div>
+                        <div class="edu-item">
+                            <strong>SD / Sederajat</strong>
+                        </div>
+                    </div>
+                </div>
             </aside>
-
         </main>
-
     </div>
 
-
-
     <script>
-
-        // Fungsi untuk menjalankan animasi bar saat bagian keahlian diklik
-
-        function showSkills() {
-
-            const progresses = document.querySelectorAll('.progress');
-
-            progresses.forEach(p => {
-
-                p.style.width = p.getAttribute('data-done');
-
-                p.style.opacity = 1;
-
-            });
-
+        let isOpen = false;
+        function toggleSkills() {
+            const container = document.getElementById('skills-container');
+            const bars = document.querySelectorAll('.progress');
+            
+            if (!isOpen) {
+                // Munculkan Grafik
+                container.style.display = 'block';
+                setTimeout(() => {
+                    container.style.opacity = '1';
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-done');
+                    });
+                }, 10);
+                isOpen = true;
+            } else {
+                // Sembunyikan Grafik
+                container.style.opacity = '0';
+                bars.forEach(bar => { bar.style.width = '0'; });
+                setTimeout(() => { container.style.display = 'none'; }, 500);
+                isOpen = false;
+            }
         }
-
     </script>
-
 </body>
-
 </html>
