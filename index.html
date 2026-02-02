@@ -11,11 +11,11 @@
     <div class="container">
         <header class="fade-in">
             <div class="profile-img">
-                <img src="foto_NIKOLAS.png" alt="NIKOLAS RAHMADANI IBRAHIM">
+                <img src="foto-nikolas-clean.png" alt="NIKOLAS RAHMADANI IBRAHIM">
             </div>
             <div class="header-text">
                 <h1>NIKOLAS RAHMADANI IBRAHIM</h1>
-                <p class="job-title">Lulusan SMA | Resilience & Leadership</p>
+                <p class="job-title">Lulusan SMA | Resilience & Leadership Specialist</p>
                 <div class="contact-info">
                     <p><i class="fas fa-calendar-alt"></i> 13 Oktober 2007</p>
                     <p><i class="fas fa-phone"></i> 08123456789</p>
@@ -38,25 +38,26 @@
                         <h4>Anggota - CLUB Basket</h4>
                         <span class="date">Masa Bakti s/d September 2025</span>
                         <ul class="list-detail">
-                            <li>Melatih kedisiplinan, kerja sama tim, dan ketahanan fisik.</li>
-                            <li>Beradaptasi dengan strategi tim untuk hasil maksimal.</li>
+                            <li>Melatih kedisiplinan, kerja sama tim, dan ketahanan fisik dalam tekanan kompetisi.</li>
+                            <li>Beradaptasi dengan berbagai strategi tim untuk mencapai hasil maksimal.</li>
+                            <li>Mengembangkan mentalitas pantang menyerah dalam menghadapi situasi pertandingan yang sulit.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="section interactive-card">
                     <h3><i class="fas fa-heart"></i> Hobi</h3>
-                    <p><strong>Olahraga:</strong> Menjaga kebugaran fisik untuk menunjang produktivitas dan kestabilan mental.</p>
+                    <p><strong>Olahraga:</strong> Saya aktif berolahraga untuk menjaga kebugaran fisik yang menunjang produktivitas kerja serta menjaga fokus dan kesehatan mental saya tetap stabil.</p>
                 </div>
             </section>
 
             <aside class="sidebar">
-                <div class="section interactive-card" id="skill-box" onclick="toggleSkills()">
+                <div class="section interactive-card" onclick="toggleSkills()">
                     <h3><i class="fas fa-chart-line"></i> Keahlian (Klik)</h3>
-                    <div id="skills-container" style="display: none; opacity: 0; transition: 0.5s;">
+                    <div id="skills-container" class="toggle-content">
                         <div class="skill-item">
                             <span>Ketahanan Mental</span>
-                            <div class="progress-bar"><div class="progress" data-done="98%"></div></div>
+                            <div class="progress-bar"><div class="progress" data-done="100%"></div></div>
                         </div>
                         <div class="skill-item">
                             <span>Kerja Sama Tim</span>
@@ -67,57 +68,83 @@
                             <div class="progress-bar"><div class="progress" data-done="95%"></div></div>
                         </div>
                     </div>
-                    <p id="click-hint" style="font-size: 10px; color: #888; margin-top: 5px;">*Klik untuk lihat grafik, Klik lagi untuk tutup</p>
+                    <p class="hint">*Klik untuk buka/tutup grafik</p>
+                </div>
+
+                <div class="section interactive-card" onclick="toggleEducation()">
+                    <h3><i class="fas fa-graduation-cap"></i> Pendidikan (Klik)</h3>
+                    <div id="edu-container" class="toggle-content">
+                        <div class="edu-item animate-item">
+                            <strong>SMA KP Baleendah</strong>
+                            <p>2023 - 2026</p>
+                        </div>
+                        <div class="edu-item animate-item">
+                            <strong>SMPN 3 Lembang</strong>
+                            <p>2020 - 2023</p>
+                        </div>
+                        <div class="edu-item animate-item">
+                            <strong>SDN 3 Lembang</strong>
+                            <p>2014 - 2020</p>
+                        </div>
+                    </div>
+                    <p class="hint">*Klik untuk riwayat sekolah</p>
                 </div>
 
                 <div class="section interactive-card">
                     <h3><i class="fas fa-globe"></i> Bahasa</h3>
                     <ul class="lang-list">
-                        <li>Indonesia & Sunda (Native), Inggris, Jepang, Italia</li>
+                        <li>Indonesia & Sunda (Native)</li>
+                        <li>Inggris, Jepang, Italia</li>
                     </ul>
-                </div>
-
-                <div class="section interactive-card">
-                    <h3><i class="fas fa-graduation-cap"></i> Pendidikan</h3>
-                    <div class="education-list">
-                        <div class="edu-item">
-                            <strong>SMA / Sederajat</strong>
-                            <p>Lulusan Terbaru</p>
-                        </div>
-                        <div class="edu-item">
-                            <strong>SMP / Sederajat</strong>
-                        </div>
-                        <div class="edu-item">
-                            <strong>SD / Sederajat</strong>
-                        </div>
-                    </div>
                 </div>
             </aside>
         </main>
     </div>
 
     <script>
-        let isOpen = false;
+        let isSkillOpen = false;
         function toggleSkills() {
             const container = document.getElementById('skills-container');
             const bars = document.querySelectorAll('.progress');
-            
-            if (!isOpen) {
-                // Munculkan Grafik
+            if (!isSkillOpen) {
                 container.style.display = 'block';
                 setTimeout(() => {
                     container.style.opacity = '1';
-                    bars.forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-done');
-                    });
+                    bars.forEach(bar => { bar.style.width = bar.getAttribute('data-done'); });
                 }, 10);
-                isOpen = true;
+                isSkillOpen = true;
             } else {
-                // Sembunyikan Grafik
                 container.style.opacity = '0';
                 bars.forEach(bar => { bar.style.width = '0'; });
                 setTimeout(() => { container.style.display = 'none'; }, 500);
-                isOpen = false;
+                isSkillOpen = false;
+            }
+        }
+
+        let isEduOpen = false;
+        function toggleEducation() {
+            const container = document.getElementById('edu-container');
+            const items = document.querySelectorAll('.animate-item');
+            if (!isEduOpen) {
+                container.style.display = 'block';
+                setTimeout(() => {
+                    container.style.opacity = '1';
+                    items.forEach((item, i) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateX(0)';
+                        }, i * 150);
+                    });
+                }, 10);
+                isEduOpen = true;
+            } else {
+                container.style.opacity = '0';
+                items.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateX(-20px)';
+                });
+                setTimeout(() => { container.style.display = 'none'; }, 500);
+                isEduOpen = false;
             }
         }
     </script>
