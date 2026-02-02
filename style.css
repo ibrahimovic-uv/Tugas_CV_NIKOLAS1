@@ -1,93 +1,108 @@
-:root {
-    --primary-color: #2c3e50;
-    --accent-color: #2980b9;
-    --text-color: #333;
-    --bg-color: #f4f7f6;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
+/* Latar Belakang Gradasi Biru */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #e9ecef;
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .container {
-    max-width: 850px;
-    margin: 0 auto;
-    background: white;
-    padding: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 4px;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 
+/* Animasi Masuk */
+.fade-in {
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header & Foto */
 header {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 30px;
     margin-bottom: 30px;
 }
 
 .profile-img img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--accent-color);
-    margin-right: 35px;
+    border: 5px solid #2a5298;
+    transition: transform 0.5s ease;
+    cursor: pointer;
 }
 
-.header-text h1 {
-    font-size: 24px;
-    letter-spacing: 1px;
-    color: var(--primary-color);
+.profile-img img:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
-.job-title {
-    color: var(--accent-color);
-    font-weight: 600;
-    margin: 5px 0 15px 0;
+/* Kartu Interaktif */
+.interactive-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #2a5298;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.contact-info p {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #666;
+.interactive-card:active {
+    transform: scale(0.95);
+    background: #f0f7ff;
 }
 
-.contact-info i { width: 20px; color: var(--accent-color); }
-
-main { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-
-.section h3 {
-    font-size: 1.1rem;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    padding-right: 20px;
+.interactive-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.item { margin-bottom: 20px; }
-.date { font-size: 0.85rem; color: #888; display: block; margin-bottom: 8px; }
-
-ul { padding-left: 18px; }
-li { margin-bottom: 5px; font-size: 0.95rem; }
-
-.skills, .skills-lang { list-style: none; padding: 0; }
-.skills li, .skills-lang li {
-    background: #f8f9fa;
-    padding: 8px 12px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    border-left: 3px solid var(--accent-color);
+/* Layout */
+main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
 }
+
+/* Progress Bar Keahlian */
+.skill-item {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.progress-bar {
+    background: #ddd;
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.progress {
+    background: linear-gradient(90deg, #1e3c72, #3498db);
+    height: 100%;
+    border-radius: 10px;
+    width: 0; /* Mulai dari 0 */
+    opacity: 0;
+    transition: width 1.5s ease-in-out, opacity 0.5s ease;
+}
+
+h3 { color: #1e3c72; margin-bottom: 10px; font-size: 18px; }
 
 @media (max-width: 768px) {
-    header { flex-direction: column; text-align: center; }
-    .profile-img img { margin-right: 0; margin-bottom: 20px; }
     main { grid-template-columns: 1fr; }
+    header { flex-direction: column; text-align: center; }
+    .profile-img img { margin-right: 0; margin-bottom: 15px; }
 }

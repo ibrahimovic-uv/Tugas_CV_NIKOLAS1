@@ -1,74 +1,149 @@
 <!DOCTYPE html>
+
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CV Profesional - NIKOLAS RAHMADANI IBRAHIM</title>
+
     <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
+
 <body>
+
     <div class="container">
-        <header>
+
+        <header class="fade-in">
+
             <div class="profile-img">
-                <img src="foto-nikolas.jpg.png" alt="Foto Nikolas Rahmadani Ibrahim">
+
+                <img src="foto_NIKOLAS.png" alt="Nikolas">
+
             </div>
+
             <div class="header-text">
+
                 <h1>NIKOLAS RAHMADANI IBRAHIM</h1>
-                <p class="job-title">Lulusan SMA | Resilience & Leadership</p>
+
+                <p class="job-title">Resilience & Leadership Specialist</p>
+
                 <div class="contact-info">
+
                     <p><i class="fas fa-phone"></i> 08123456789</p>
-                    <p><i class="fab fa-instagram"></i> @nikolasrahmadaniibrahim</p>
+
                     <p><i class="fas fa-location-dot"></i> Bandung Selatan, Jelekong</p>
+
                 </div>
+
             </div>
+
         </header>
 
+
+
         <main>
+
             <section class="main-content">
-                <div class="section">
+
+                <div class="section interactive-card">
+
                     <h3><i class="fas fa-user"></i> Tentang Saya</h3>
-                    <p>Lahir pada 13 Oktober 2007. Saya adalah individu dengan ketahanan mental tinggi, mampu beradaptasi cepat, dan selalu menghadapi tantangan dengan kepala tegap serta tetap tenang dalam situasi sulit.</p>
+
+                    <p>Lahir pada 13 Oktober 2007. Individu dengan ketahanan mental tinggi, mampu beradaptasi cepat, dan selalu menghadapi tantangan dengan kepala tegap.</p>
+
                 </div>
-                <div class="section">
-                    <h3><i class="fas fa-users"></i> Pengalaman Organisasi</h3>
-                    <div class="item">
-                        <h4>Anggota - CLUB Basket</h4>
-                        <span class="date">Masa Bakti s/d September 2025</span>
-                        <p>Mengembangkan kedisiplinan dan kerja sama tim dalam lingkungan kompetitif.</p>
-                    </div>
+
+
+
+                <div class="section interactive-card">
+
+                    <h3><i class="fas fa-users"></i> Organisasi</h3>
+
+                    <p>Anggota - CLUB Basket (s/d Sept 2025). Melatih kedisiplinan dan kerja sama tim secara profesional.</p>
+
                 </div>
-                <div class="section">
-                    <h3><i class="fas fa-dumbbell"></i> Hobi</h3>
-                    <p>Olahraga (Menjaga kebugaran dan fokus mental).</p>
-                </div>
+
             </section>
 
+
+
             <aside class="sidebar">
-                <div class="section">
-                    <h3>Keahlian</h3>
-                    <ul class="skills">
-                        <li>Ketahanan Mental</li>
-                        <li>Kerja Sama Tim</li>
-                        <li>Analisis Situasi Cepat</li>
-                        <li>Manajemen Stres</li>
-                    </ul>
+
+                <div class="section interactive-card" id="skill-section" onclick="showSkills()">
+
+                    <h3><i class="fas fa-bolt"></i> Keahlian (Klik)</h3>
+
+                    <div class="skill-item">
+
+                        <span>Ketahanan Mental</span>
+
+                        <div class="progress-bar"><div class="progress" style="width: 0%" data-done="95%"></div></div>
+
+                    </div>
+
+                    <div class="skill-item">
+
+                        <span>Kerja Sama Tim</span>
+
+                        <div class="progress-bar"><div class="progress" style="width: 0%" data-done="90%"></div></div>
+
+                    </div>
+
+                    <div class="skill-item">
+
+                        <span>Manajemen Stres</span>
+
+                        <div class="progress-bar"><div class="progress" style="width: 0%" data-done="98%"></div></div>
+
+                    </div>
+
                 </div>
-                <div class="section">
-                    <h3>Bahasa</h3>
-                    <ul class="skills">
-                        <li>Indonesia & Sunda (Native)</li>
-                        <li>Inggris</li>
-                        <li>Jepang</li>
-                        <li>Italia</li>
-                    </ul>
+
+
+
+                <div class="section interactive-card">
+
+                    <h3><i class="fas fa-language"></i> Bahasa</h3>
+
+                    <p>Indonesia, Sunda, Inggris, Jepang, Italia.</p>
+
                 </div>
-                <div class="section">
-                    <h3>Pendidikan</h3>
-                    <p><strong>SMA / Sederajat</strong><br>Lulusan Terbaru</p>
-                </div>
+
             </aside>
+
         </main>
+
     </div>
+
+
+
+    <script>
+
+        // Fungsi untuk menjalankan animasi bar saat bagian keahlian diklik
+
+        function showSkills() {
+
+            const progresses = document.querySelectorAll('.progress');
+
+            progresses.forEach(p => {
+
+                p.style.width = p.getAttribute('data-done');
+
+                p.style.opacity = 1;
+
+            });
+
+        }
+
+    </script>
+
 </body>
+
 </html>
